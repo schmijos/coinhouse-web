@@ -1,0 +1,7 @@
+# Emails
+DEFAULT_MAIL_SENDER: no-reply@example.com
+HOST: "localhost:3000"
+MANDRILL_USERNAME: "mandrillname"
+MANDRILL_APIKEY: "somekey"
+
+INFO_EMAIL: jschmid@fastmail.net

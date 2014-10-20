@@ -1,0 +1,14 @@
+.row
+  .col-md-12
+
+    h1 Statistics
+    p = Faker::Lorem.paragraph
+
+    h2 Stat One
+    = pie_chart({"Football" => 10, "Basketball" => 5})
+
+    h2 Stat Two
+    = line_chart [{ name: "Series A", data: [[1,2],[2,1],[3,6],[4,6]] }, { name: "Series A", data: [[1,5],[2,-2],[3,3],[4,7]] }]
+
+    h2 Stat Three
+    = timeline [["Washington", "1789-04-29", "1797-03-03"], ["Adams", "1797-03-03", "1801-03-03"], ["Jefferson", "1801-03-03", "1809-03-03"]]

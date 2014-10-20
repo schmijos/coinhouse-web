@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title Swiss Coin House
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    .container
+      .row
+        .col-sm-12
+          .panel.panel-primary
+            .panel-heading QR Code
+            .panel-body
+              p = @next_address.the_hash
+              table.qrcode-view
+                - @qrcode.modules.each_index do |x|
+                  tr
+                    - @qrcode.modules.each_index do |y|
+                      - if @qrcode.dark?(x,y)
+                        td.black
+                      - else
+                        td.white
+
+      .row
+        .col-sm-12
+          .panel.panel-primary
+            .panel-heading Detailed Information
+            .panel-body
+              dl.dl-horizontal
+                dt Your payment goes to
+                dd = "%s (%s)" % [@user.name, @user.id]
+
+                dt You're paying
+                dd = number_to_currency(@next_address.target_course_balance, unit: @next_address.target_course_unit, format: "%u %n")
+
+                dt Bitcoins to Transfer
+                dd = @next_address.target_balance
+
+                dt Target BTC Address
+                dd = @next_address.the_hash
+
+      .row
+        .col-sm-12
+          .panel.panel-info
+            .panel-heading Time to pay
+            .panel-body
+              .progress
+                .progress-bar.progress-bar-warning role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"
+                  | 30s

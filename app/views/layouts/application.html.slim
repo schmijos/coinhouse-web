@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Swiss Coin House
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag '//www.google.com/jsapi', 'chartkick'
+    = csrf_meta_tags
+
+  body
+    = render 'layouts/shared/header'
+
+    .container
+      .row
+        .col-md-12
+          = render partial: 'layouts/shared/flash_messages', flash: flash
+
+      = yield
+
+    = render 'layouts/shared/footer'

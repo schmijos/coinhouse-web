@@ -1,0 +1,19 @@
+table.table
+  thead
+    tr
+      th ID
+      th Created
+      th Completed
+      th Balance
+      th Unit
+      th # Transactions
+
+  tbody
+    - @user.payouts.each do |p|
+      tr
+        td = p.id
+        td = p.created_at
+        td = p.completed_at
+        td = number_to_human p.course_balance
+        td = p.course_unit
+        td = p.btc_addresses.count

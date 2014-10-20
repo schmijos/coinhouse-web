@@ -1,0 +1,22 @@
+= form_for @contact do |f|
+  .form-group
+    label for="contact_first_name" Vorname *
+    = f.text_field :first_name, class: 'form-control', required: true
+
+  .form-group
+    label for="contact_last_name" Nachname *
+    = f.text_field :last_name, class: 'form-control', required: true
+
+  .form-group
+    label for="contact_email" E-Mail *
+    = f.text_field :email, class: 'form-control', type: 'email', required: true
+
+  .form-group
+    label for="contact_phone" Telefon
+    = f.text_field :phone, class: 'form-control', type: 'tel'
+
+  .form-group
+    label for="contact_message" Nachricht *
+    = f.text_area :message, class: 'form-control', required: true
+
+  = f.submit class: 'btn btn-primary', value: 'Anfrage senden'
