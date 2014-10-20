@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 
 gem 'rails', '4.1.5'
-gem 'sqlite3'
 
 gem 'jquery-rails'
 gem 'simple_form'
@@ -28,6 +27,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'faker', '~> 1.4.2'
