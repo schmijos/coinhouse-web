@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'faker', '~> 1.4.2' # TODO: Remove when releasing
+
 group :development do
   gem 'spring'
   gem 'better_errors'
@@ -30,7 +32,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem 'faker', '~> 1.4.2'
   gem 'capybara'
   gem 'database_cleaner'
 end
