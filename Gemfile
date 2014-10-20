@@ -35,6 +35,10 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+group :production do
+  gem 'pg'
+end
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
